@@ -2,13 +2,12 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const model = require('../server/models/sequelizeSchema');
 const bcrypt = require('bcrypt');
+const DAO = require('../server/models/usersDAO')
 
 passport.use('login', new LocalStrategy({passReqToCallback: true}, async function(req, username, password, done) {
     let user = undefined;
     try{ //busco user
-        user = await model.User.findOne({
-            where: { username }
-        });
+        user = await DAO.getUser(username);
     }catch (error) {
         console.log(error);      
     };
@@ -29,9 +28,7 @@ passport.use('login', new LocalStrategy({passReqToCallback: true}, async functio
 passport.use('register',new LocalStrategy({passReqToCallback: true}, async function(req, username, password, done) {
     findOrCreateUser = async function() {
         try {//busco user
-            let response = await model.User.findOne({
-                where: { email : req.body.email }
-            });
+            let response = await DAO.getUserByEmail(req.body.email)
             console.log("LA RESPONSE", response);
             if(response === null) response = {dataValues:{email:""}};
             if(response.dataValues.email === req.body.email) {//----------------
@@ -46,13 +43,8 @@ passport.use('register',new LocalStrategy({passReqToCallback: true}, async funct
             const reg = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/).test(req.body.email);
             if(reg){
                 bcrypt.hash(password, 10).then( async function(hash) {
-                    const user = await model.User.create(
-                        {
-                            username,
-                            password: hash,
-                            email: req.body.email,
-                        }
-                    );
+                    const user = await DAO.createUser(username, hash, req.body.email)
+
                     console.log('nuevo registro completado', user);
                     return done(null, user);
                 });

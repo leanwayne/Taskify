@@ -1,4 +1,4 @@
-const model = require('../models/sequelizeSchema');
+const DAO = require('../models/usersDAO');
 
 module.exports = {
     register: async (req, res) => {  
@@ -38,7 +38,7 @@ module.exports = {
 
     getUsers: async (req, res) => {
         try {
-            const users = await model.User.findAll();
+            const users = await DAO.getUsers();
              if( users === null){
                  console.log("not found!!!");
              } else {
