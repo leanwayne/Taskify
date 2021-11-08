@@ -1,4 +1,5 @@
 const DAO = require('../models/tasksDAO');
+const logger = require('../../utils/log4js');
 
 module.exports = {
 
@@ -7,7 +8,7 @@ module.exports = {
             const tasks = await DAO.getTasks(req.session.passport.user.id);
             return res.status(200).json(tasks);           
         } catch (error) {
-            console.log("error getUserTasksById", error); 
+            logger.logError.error("error getUserTasksById", error);
             return res.status(400).send("can't get the tasks"); 
         };
     },
@@ -21,7 +22,7 @@ module.exports = {
             );
             return res.status(200).json(task);            
         } catch (error) {
-            console.log("error createTask", error)
+            logger.logError.error("error createTask", error);
             return res.status(400).send("can't create the task");
         };
     },
@@ -42,10 +43,10 @@ module.exports = {
                 req.session.passport.user.id,
                 newTask,
             );
-            console.log("updated--------",updatedTask);
+            logger.logInfo.info("task updated", updatedTask);
             return res.status(200).json(updatedTask); 
         } catch (error) {
-            console.log("error updateUserTaskById", error);
+            logger.logError.error("error updateUserTaskById", error);
             return res.status(400).send("can't update the task");
         };
     },
@@ -53,10 +54,10 @@ module.exports = {
     deleteUserTaskById: async (req, res) => {
         try {
             const deleteTask = await DAO.deleteTasks(req.query.id, req.session.passport.user.id);
-            console.log("task deleted----",deleteTask)
+            logger.logInfo.info("task deleted----",deleteTask);
             return res.status(200).send("task deleted");
         } catch (error) {
-            console.log("error deleteUserTaskById", error);
+            logger.logError.error("error deleteUserTaskById", error);
             return res.status(400).send("can't delete the task");
         };
     },
