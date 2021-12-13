@@ -26,13 +26,12 @@ app.use(
         resave: true,
         saveUninitialized: false,
         rolling: true,
-        cookie: { maxAge : 60000 }
+        cookie: { maxAge : 60000000 }
     })
 )
 app.use(passport.initialize())
 app.use(passport.session())
 //--
-
 //Data base heroku postgreSql--
 const { pgDb } = require('../config/pgSqlConfig');
 const models = require('./models/sequelizeSchema')

@@ -55,8 +55,9 @@ module.exports = {
         try {
             const deleteTask = await DAO.deleteTasks(req.query.id, req.session.passport.user.id);
             logger.logInfo.info("task deleted----",deleteTask);
-            return res.status(200).send("task deleted");
+            return res.status(200).json(deleteTask);
         } catch (error) {
+            console.log("un error al borrar")
             logger.logError.error("error deleteUserTaskById", error);
             return res.status(400).send("can't delete the task");
         };

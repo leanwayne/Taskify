@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import ReactPlayer from 'react-player';
 import heroVideo from '../media/video1.mp4';
-import { makeStyles } from '@mui/styles';
-import {Box, Typography} from '@mui/material/';
+import {makeStyles} from '@mui/styles';
+import {Typography, Grid} from '@mui/material/';
 import SignIn from '../components/login/SignIn';
 import SignUp from '../components/login/SignUp';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -24,18 +25,31 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     title: {
-        paddingBottom: theme.spacing(3),
-        letterSpacing: theme.spacing(1)
+        paddingTop: theme.spacing(4),
+        letterSpacing: theme.spacing(1),
     },
 }));
 
+const ResponsiveTitle = () => {
+    const matches = useMediaQuery((theme) => theme.breakpoints.down('md'));
+    const titleProps = {
+        variant: matches? 'h2' : 'h1',
+        color: matches? 'secondary.light' : null
+    }
+    return (
+        <Typography {...titleProps}>
+            TASKIFY
+        </Typography>
+    );
+};
+
 const Hero = ({changeLogStatus}) => {
     const classes = useStyles();
-    const [changeForm, setChangeForm] = useState(true)
+    const [changeForm, setChangeForm] = useState(true);
 
     const handleForm = () => {
-        setChangeForm(!changeForm)
-    }
+        setChangeForm(!changeForm);
+    };
 
     return (
         <section className={classes.root}>
@@ -48,24 +62,24 @@ const Hero = ({changeLogStatus}) => {
                 height="100%"
             />
             <div className={classes.overlay}>
-                <Box
-                    height="90%"
-                    display="flex"
-                    flexDirection="column"
+                <Grid 
+                    container
+                    direction="column"
                     justifyContent="center"
                     alignItems="center"
-                    color="#fff"
                 >
-                    <Typography variant="h2" component="h1" className={classes.title}>
-                        TASKIFY
-                    </Typography>
-                    {changeForm === false?
-                        <SignIn handleForm={handleForm} changeLogStatus={changeLogStatus}/> :
-                        <SignUp handleForm={handleForm} changeLogStatus={changeLogStatus}/>
-                    }
-                </Box>
+                    <Grid item className={classes.title}>
+                        <ResponsiveTitle/>
+                    </Grid>
+                    <Grid item>
+                        {changeForm?
+                            <SignIn handleForm={handleForm} changeLogStatus={changeLogStatus}/> :
+                            <SignUp handleForm={handleForm} changeLogStatus={changeLogStatus}/>
+                        }
+                    </Grid>
+                </Grid>
             </div>
         </section>
-    )
+    );
 }
 export default Hero;

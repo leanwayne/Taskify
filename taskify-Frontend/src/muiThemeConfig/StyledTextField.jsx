@@ -1,7 +1,7 @@
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 
-const CssTextField = styled(TextField)({
+const StyledTextField = styled(TextField)({
     '& .MuiInputLabel-root':{
         color:'#cdcdcd'
     },
@@ -22,4 +22,4 @@ const CssTextField = styled(TextField)({
         },   
     },
 });
-export default CssTextField;
+export default StyledTextField;

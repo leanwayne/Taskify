@@ -50,4 +50,14 @@ module.exports = {
             logger.logError.error("error",error); 
         };
     },
+
+    logOut: (req, res) => {
+        try {
+            console.log("la session", req.session)
+            if(req.session) return req.session.destroy(err => res.status(200).json("asddas")) 
+               
+        } catch (error){      
+            return res.status(400).send('no se encontro la session')
+        }
+    },
 };

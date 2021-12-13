@@ -7,7 +7,7 @@ const logger = require('../utils/log4js');
 
 passport.use('login', new LocalStrategy({passReqToCallback: true}, async function(req, username, password, done) {
     let user = undefined;
-    try{ //busco user
+    try{
         user = await DAO.getUser(username);
     }catch (error) {
         logger.logError.error(error);     
@@ -28,7 +28,7 @@ passport.use('login', new LocalStrategy({passReqToCallback: true}, async functio
 
 passport.use('register',new LocalStrategy({passReqToCallback: true}, async function(req, username, password, done) {
     findOrCreateUser = async function() {
-        try {//busco user
+        try {
             let response = await DAO.getUserByEmail(req.body.email)
             if(response === null) response = {dataValues:{email:""}};
             if(response.dataValues.email === req.body.email) {
@@ -38,7 +38,7 @@ passport.use('register',new LocalStrategy({passReqToCallback: true}, async funct
         }catch(error) {
             logger.logError.error(error);
         };
-        //si no existe lo creo
+
         try {
             const reg = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/).test(req.body.email);
             if(reg){

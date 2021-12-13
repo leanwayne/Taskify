@@ -1,0 +1,392 @@
+[2021-12-05T19:36:52.349] [ERROR] error - error deleteUserTaskById DatabaseError [SequelizeDatabaseError]: invalid input syntax for type integer: "jkljlk"
+    at Query.formatError (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:386:16)
+    at Query.run (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:87:18)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\sequelize.js:619:16
+    at async PostgresQueryInterface.bulkDelete (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\abstract\query-interface.js:944:12)
+    at async Function.destroy (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\model.js:2946:16)
+    at async Object.deleteTasks (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\models\tasksDAO.js:34:41)
+    at async deleteUserTaskById (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\controllers\tasksController.js:56:32) {
+  parent: error: invalid input syntax for type integer: "jkljlk"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 111,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'jkljlk' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  original: error: invalid input syntax for type integer: "jkljlk"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 111,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'jkljlk' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  sql: `DELETE FROM "tasks" WHERE "id" = 'jkljlk' AND "user_id" = 1`,
+  parameters: undefined
+}
+[2021-12-06T00:32:43.160] [ERROR] error - error deleteUserTaskById DatabaseError [SequelizeDatabaseError]: invalid input syntax for type integer: "undefined"
+    at Query.formatError (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:386:16)
+    at Query.run (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:87:18)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\sequelize.js:619:16
+    at async PostgresQueryInterface.bulkDelete (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\abstract\query-interface.js:944:12)
+    at async Function.destroy (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\model.js:2946:16)
+    at async Object.deleteTasks (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\models\tasksDAO.js:34:41)
+    at async deleteUserTaskById (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\controllers\tasksController.js:56:32) {
+  parent: error: invalid input syntax for type integer: "undefined"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 114,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  original: error: invalid input syntax for type integer: "undefined"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 114,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+  parameters: undefined
+}
+[2021-12-06T00:32:55.046] [ERROR] error - error deleteUserTaskById DatabaseError [SequelizeDatabaseError]: invalid input syntax for type integer: "undefined"
+    at Query.formatError (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:386:16)
+    at Query.run (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:87:18)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\sequelize.js:619:16
+    at async PostgresQueryInterface.bulkDelete (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\abstract\query-interface.js:944:12)
+    at async Function.destroy (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\model.js:2946:16)
+    at async Object.deleteTasks (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\models\tasksDAO.js:34:41)
+    at async deleteUserTaskById (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\controllers\tasksController.js:56:32) {
+  parent: error: invalid input syntax for type integer: "undefined"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 114,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  original: error: invalid input syntax for type integer: "undefined"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 114,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+  parameters: undefined
+}
+[2021-12-06T00:32:59.004] [ERROR] error - error deleteUserTaskById DatabaseError [SequelizeDatabaseError]: invalid input syntax for type integer: "undefined"
+    at Query.formatError (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:386:16)
+    at Query.run (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:87:18)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\sequelize.js:619:16
+    at async PostgresQueryInterface.bulkDelete (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\abstract\query-interface.js:944:12)
+    at async Function.destroy (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\model.js:2946:16)
+    at async Object.deleteTasks (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\models\tasksDAO.js:34:41)
+    at async deleteUserTaskById (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\controllers\tasksController.js:56:32) {
+  parent: error: invalid input syntax for type integer: "undefined"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 114,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  original: error: invalid input syntax for type integer: "undefined"
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 114,
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: '34',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '320',
+    routine: 'pg_strtoint32',
+    sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+    parameters: undefined
+  },
+  sql: `DELETE FROM "tasks" WHERE "id" = 'undefined' AND "user_id" = 1`,
+  parameters: undefined
+}
+[2021-12-06T14:17:42.271] [ERROR] error - error getUserTasksById ConnectionError [SequelizeConnectionError]: connect ETIMEDOUT 18.215.96.54:5432
+    at Client._connectionCallback (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:184:24)
+    at Client._handleErrorWhileConnecting (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg\lib\client.js:305:19)
+    at Client._handleErrorEvent (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg\lib\client.js:315:19)
+    at Connection.emit (events.js:376:20)
+    at Socket.reportStreamError (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg\lib\connection.js:52:12)
+    at Socket.emit (events.js:376:20)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+    at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+  parent: Error: connect ETIMEDOUT 18.215.96.54:5432
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+    errno: -4039,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '18.215.96.54',
+    port: 5432
+  },
+  original: Error: connect ETIMEDOUT 18.215.96.54:5432
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+    errno: -4039,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '18.215.96.54',
+    port: 5432
+  }
+}
+[2021-12-07T21:58:23.095] [ERROR] error - DatabaseError [SequelizeDatabaseError]: relation "Users" does not exist
+    at Query.formatError (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:386:16)
+    at Query.run (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\postgres\query.js:87:18)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\sequelize.js:619:16
+    at async PostgresQueryInterface.select (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\dialects\abstract\query-interface.js:953:12)
+    at async Function.findAll (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\model.js:1753:21)
+    at async Function.findOne (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\sequelize\lib\model.js:1917:12)
+    at async Object.getUserByEmail (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\server\models\usersDAO.js:15:22)
+    at async findOrCreateUser (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\src\passport\passport.js:32:28) {
+  parent: error: relation "Users" does not exist
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 104,
+    severity: 'ERROR',
+    code: '42P01',
+    detail: undefined,
+    hint: undefined,
+    position: '77',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '1373',
+    routine: 'parserOpenTable',
+    sql: `SELECT "id", "username", "password", "email", "createdAt", "updatedAt" FROM "Users" AS "User" WHERE "User"."email" = 'lean34@wayne.com';`,
+    parameters: undefined
+  },
+  original: error: relation "Users" does not exist
+      at Parser.parseErrorMessage (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:287:98)
+      at Parser.handlePacket (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:126:29)
+      at Parser.parse (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\parser.js:39:38)
+      at TLSSocket.<anonymous> (C:\Users\lean_\OneDrive\Desktop\Tasktify\Nueva carpeta\tasktify\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+      at readableAddChunk (internal/streams/readable.js:284:9)
+      at TLSSocket.Readable.push (internal/streams/readable.js:223:10)
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:188:23) {
+    length: 104,
+    severity: 'ERROR',
+    code: '42P01',
+    detail: undefined,
+    hint: undefined,
+    position: '77',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '1373',
+    routine: 'parserOpenTable',
+    sql: `SELECT "id", "username", "password", "email", "createdAt", "updatedAt" FROM "Users" AS "User" WHERE "User"."email" = 'lean34@wayne.com';`,
+    parameters: undefined
+  },
+  sql: `SELECT "id", "username", "password", "email", "createdAt", "updatedAt" FROM "Users" AS "User" WHERE "User"."email" = 'lean34@wayne.com';`,
+  parameters: undefined
+}

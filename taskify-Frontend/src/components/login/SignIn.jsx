@@ -1,14 +1,11 @@
-import React, {useState, useContext} from 'react'
-import {Button, Grid, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText} from '@mui/material/'
-import {makeStyles} from '@mui/styles'
-//import {useHistory} from 'react-router-dom'
-//import ProfilePage from './ProfilePage'
-//import {AuthContext} from '../contexts/AuthContext'
+import React, {useState} from 'react';
+import {Button, Grid, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText} from '@mui/material/';
+import {makeStyles} from '@mui/styles';
 import StyledTextField from '../../muiThemeConfig/StyledTextField';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        margin: theme.spacing(8, 4),
+        margin: theme.spacing(15, 4),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -18,25 +15,19 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         width: '80%',
-        marginTop: theme.spacing(5),
-    },
-    submit: {
-        margin: theme.spacing(3, 0, 2),
-        marginTop: '50px',
-        backgroundColor: 'black',
+        marginTop: theme.spacing(4),
     },
     textCursor:{
-        cursor: 'pointer'
+        cursor: 'pointer',
+        color: 'white',
     },
 }))
 
 const SignIn = ({handleForm, changeLogStatus}) => {
-    const classes = useStyles()
-    const [user, setUser] = useState('')
-    const [password, setPassword] = useState('')
-    const [open, setOpen] = useState(false)
-    //const history = useHistory()
-    //const {logged} = useContext(AuthContext)
+    const classes = useStyles();
+    const [user, setUser] = useState('');
+    const [password, setPassword] = useState('');
+    const [open, setOpen] = useState(false);
 
     const signIn = () => {
         const requestOptions = {
@@ -48,22 +39,19 @@ const SignIn = ({handleForm, changeLogStatus}) => {
         fetch('http://localhost:8080/users/login', requestOptions)
         .then(response => response.json())
         .then(data => {
-            //history.push('/')
-            changeLogStatus(data)
-            console.log("USER CONECTADO!!")
+            changeLogStatus(data);
         })
         .catch(err =>{
-            //TODO : si logged es true cambiar la pag de la app
-            if(!open)setOpen(true)
-            console.log("ERRROR" , err)
-        })
-    }
+            if(!open)setOpen(true);
+            console.log("ERRROR" , err);
+        });
+    };
 
     const handleClose = () => {
-        setUser('')
-        setPassword('')
-        setOpen(false)
-    }
+        setUser('');
+        setPassword('');
+        setOpen(false);
+    };
 
     return (
         <Grid container justifyContent='center'>
@@ -133,6 +121,6 @@ const SignIn = ({handleForm, changeLogStatus}) => {
                 </Dialog>
             )}
         </Grid>
-    )
-}
-export default SignIn
+    );
+};
+export default SignIn;

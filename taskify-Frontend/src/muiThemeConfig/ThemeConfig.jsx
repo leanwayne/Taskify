@@ -5,7 +5,7 @@ const theme = createTheme({
         fontFamily:['Roboto Condensed','sans-serif' ].join(','),
         h1:{
             fontFamily:['Roboto Condensed','sans-serif' ].join(','),
-            fontSize: 90
+            color:'white'  
         },
         h2:{
             fontFamily:['Roboto Condensed','sans-serif' ].join(','),
@@ -30,16 +30,18 @@ const theme = createTheme({
         },
         body2:{
             fontFamily:['Work Sans', 'sans-serif'].join(','),
+            fontWeight: 550
         },
     },
     palette:{
         primary:{
-            main:'#212121'
+            main:'#212121',
+            light:'#eba848'
         },
         secondary:{
             main:'#000000',
-            light:'#e0e0e0'
-        }
-    }
-})
-export default theme
+            light:'#ffffff'
+        },
+    },
+});
+export default theme;
