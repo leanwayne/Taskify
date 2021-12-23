@@ -27,6 +27,6 @@ it will install everything the project needs, in the node_modules folder, creati
 Runs the app in the production mode.
 Open http://localhost:8080 to view it in the browser.
 
-## Server architecture
+## Directory structure
 
 ![Sin título](https://user-images.githubusercontent.com/61666884/147269843-3aaaa43a-0438-4475-8639-f1034024e374.jpg)
