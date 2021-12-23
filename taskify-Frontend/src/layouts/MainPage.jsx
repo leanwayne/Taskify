@@ -1,16 +1,26 @@
 import React, {useState, useEffect} from 'react';
-import {Grid, Container} from '@mui/material/';
+import {Grid, Container, Fab} from '@mui/material/';
 import TopBar from '../components/topBar/TopBar';
-import NewTaskButton from '../components/buttons/NewTaskButton';
+import AddIcon from '@mui/icons-material/Add';
 import TaskContainer from '../components/taskcomponents/TaskContainer';
+import FormDialog from '../components/dialogs/FormDialog';
 
 const MainPage = ({logOut}) => {
     const [taskWatcher, setTaskWatcher] = useState(1);
     const [pendingTasks, setPendingTasks] = useState();
     const [completedTasks, setCompletedTasks] = useState();
+    const [openDialog, setOpenDialog] = useState(false);
 
     const taskHandler = () => {
         setTaskWatcher(taskWatcher+1);
+    };
+
+    const openFormDialog = () => {
+        setOpenDialog(true);
+    };
+
+    const closeFormDialog = () => {
+        setOpenDialog(false);
     };
 
     useEffect(() => {
@@ -26,7 +36,7 @@ const MainPage = ({logOut}) => {
             setCompletedTasks(data.filter(task => task.completed === true));
         })
         .catch((err) =>{
-            console.log('error', err);
+            //console.log('error', err);
         });  
     }, [taskWatcher]);
 
@@ -36,7 +46,15 @@ const MainPage = ({logOut}) => {
             <Container maxWidth="m">
                 <Grid container justifyContent="center" sx={{marginBottom:'70px'}}>
                     <Grid item sx={{padding:'25px'}}>
-                        <NewTaskButton newTaskHandler={taskHandler}/>
+                        <Fab variant="contained" onClick={openFormDialog} size="large" sx={{backgroundColor:'#eba848'}}>
+                            <AddIcon/>
+                        </Fab>
+                        <FormDialog 
+                            dialogTrigger={openDialog} 
+                            dialogCloser ={closeFormDialog} 
+                            taskHandler={taskHandler} 
+                            dialogTitle={'Create Task'}
+                        />  
                     </Grid>
                     <Grid container spacing={5} rowSpacing={1} justifyContent="center">
                         <Grid item xs={12} sm={12} md={5}>

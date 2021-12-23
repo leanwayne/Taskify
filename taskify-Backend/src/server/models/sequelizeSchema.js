@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const Sequelize = require('sequelize');
 const { pgDb } = require('../../config/pgSqlConfig');
 
 const User = pgDb.define('User', {
@@ -6,18 +6,18 @@ const User = pgDb.define('User', {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: Sequelize.DataTypes.INTEGER
     },
     username: {
-        type: DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING,
         allowNull: false,     
     },
     password: {
-        type: DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING,
         allowNull: false
     },
     email: {
-        type: DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING,
         allowNull: false,
         unique: true,
     },
@@ -28,31 +28,48 @@ const Task = pgDb.define('tasks', {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: Sequelize.DataTypes.INTEGER
     },
     title:{
-        type: DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING,
         allowNull: false, 
     },
     description:{
-        type: DataTypes.STRING(1234),
+        type: Sequelize.DataTypes.STRING(1234),
     },
     completed:{
-        type: DataTypes.BOOLEAN,
+        type: Sequelize.DataTypes.BOOLEAN,
         allowNull: false,
     },
     user_id:{
-        type: DataTypes.INTEGER,
+        type: Sequelize.DataTypes.INTEGER,
         references:{
             model:User,
             key:'id',
         },
     },
 }, {});
+
+const Session = pgDb.define('Session', {
+    sid: {
+        type: Sequelize.STRING,
+        primaryKey: true,
+    },
+    expires: Sequelize.DATE,
+    data: Sequelize.STRING(50000),
+});
+
+
+
   
 (async() => {
     User.sync();
     Task.sync();
+    Session.sync();
 })();
 
-module.exports = { User, Task }
+module.exports = { 
+    User, 
+    Task,
+    Session,
+}

@@ -47,13 +47,13 @@ const SignUp = ({handleForm, changeLogStatus}) => {
             .then(response => response.json())
             .then(data => {
                 changeLogStatus(data);
-                console.log("USER REGISTRADO CORRECTAMENTE", data);
+                //console.log("USER REGISTRADO CORRECTAMENTE", data);
             })
             .catch(err =>{
                 setError1(true);
                 setErrorText1('This email is already register');       
                 setPassword('');
-                console.log('ERROR', err);
+                //console.log('ERROR', err);
             })
         }else {
             if(!reg){

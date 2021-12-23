@@ -31,7 +31,7 @@ const TaskDoneButton = ({task, taskHandler}) => {
             notify();
         })
         .catch(err =>{
-            console.log('ERROR', err);
+            //console.log('ERROR', err);
         });
     };
 
